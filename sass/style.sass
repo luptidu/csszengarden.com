@@ -1,0 +1,499 @@
+
+body
+    margin: 0
+    font-family: sans-serif
+    background-color: #f6efe5
+
+.page-wrapper
+    min-width: 483px
+    max-width: 1920px
+    margin: 0 auto
+    height: 1px
+
+h3
+    font-size: 24px
+p
+    font-size: 15px
+    line-height: 30px
+
+li
+    list-style-type: none
+
+
+// variables
+$blue: #31c6dc
+$dark-blue: #0d2c40
+$pink: #c879b2
+$orange: #f15a30
+
+//min
+$desktop-width: 1120px
+$tablet-width: 840px
+$mobile-width: 636px
+// mixin
+@mixin clearfix
+    &::after
+    content: ""
+    display: table
+    clear: both
+
+
+@mixin white-line
+    text-decoration: none
+    color: white
+    position: relative
+
+    &:hover
+        color: #7d4b6e
+
+    &::after
+        content: ''
+        position: absolute
+        bottom: -4px
+        left: 0
+        width: 100%
+        height: 1px
+        background-color: white
+
+@mixin black-line
+    text-decoration: none
+    color: black
+    position: relative
+
+    &:hover
+        color: #7d4b6e
+    &::after
+        content: ''
+        position: absolute
+        bottom: -4px
+        left: 0
+        width: 100%
+        height: 1px
+        background-color: black
+
+@mixin number($number)
+    &::before
+        content: $number
+        position: absolute
+        bottom: 104px
+        left: 18px
+        color: white
+        height: 59px
+        width: 45px
+        font-size: 80px
+
+// INTRO
+.intro
+    @include clearfix
+
+    //banner
+    header
+        width: 40%
+        background-color: $pink
+        position: relative
+        float: left
+        @include clearfix
+        h1
+
+            float: left
+            transform: rotate(270deg)
+            color: white
+            top: 120px
+            left: -40px
+            margin: 0
+            font-size: 18px
+            position: absolute
+
+        h2
+            width: 50%
+            min-height: 800px
+            background-color: $dark-blue
+            float: right
+            margin: 0
+            margin-left: 20%
+            color: white
+            box-sizing: border-box
+            padding: 0 25px
+            padding-top: 250px
+            font-size: 40px
+            position: relative
+            &::after
+                content: ''
+                display: block
+                background: url(../images/icon-star.svg) no-repeat
+                position: absolute
+                width: 100%
+                height: 100%
+                background-size: 100%
+                background-position: bottom
+                left: 0
+                bottom: 0
+
+        //summary
+.summary
+    box-sizing: border-box
+    position: relative
+    width: 60%
+    float: left
+    min-height: 800px
+    background-color: $pink
+    padding-top: 250px
+
+
+    p
+        color: white
+        width: 55%
+        padding-left: 25px
+        &:last-child
+            margin-bottom: 350px
+    a
+        @include white-line
+
+    &::after
+        content: ''
+        display: block
+        background: url('../images/circle-white.svg') no-repeat
+        background-size: 100%
+        position: absolute
+        width: 100%
+        height: 50%
+        background-position: bottom
+        bottom: 0
+        z-index: 1
+
+
+
+
+.preamble
+    @include clearfix
+    width: 60%
+    padding: 0 20%
+    padding-top: 122px
+    padding-bottom: 112px
+    position: relative
+
+    p
+        width: 66%
+
+    p:last-child
+        box-sizing: border-box
+        position: absolute
+        top: -62px
+        right: 20%
+        width: 20%
+        padding: 0 20px
+        color: white
+
+        background-color: $blue
+        opacity: 0.9
+        padding-top: 200px
+        padding-bottom: 300px
+
+// MAIN
+.main
+    @include clearfix
+    background-image: url('../images/mid-century-1.jpg')
+    background-size: cover
+    background-position: center
+    position: relative
+    z-index: -2
+    margin-bottom: 1339px
+    // explanation
+.explanation
+    position: relative
+    z-index: auto
+    margin: 300px 0
+    margin-right: 60%
+    background-color: $dark-blue
+
+    &::before
+        content: ''
+        position: absolute
+        background: url('../images/icon-half.svg')
+        width: 40%
+        height: 100%
+        background-size: contain
+        background-repeat: no-repeat
+        background-position: center
+        right: 0
+
+    h3
+        color: white
+        position: absolute
+        transform: rotate(270deg)
+        left: -96px
+        top: 50%
+        margin-top: -14px
+
+    p
+        color: white
+        margin: 0
+        width: 50%
+        padding-left: 126px
+        padding-right: 170px
+
+    & :nth-child(2)
+        padding-top: 50px
+
+
+    & :nth-child(3)
+        padding-top: 30px
+        padding-bottom: 50px
+
+    //participation
+.participation
+    box-sizing: border-box
+    position: absolute
+    width: 40%
+    margin-left: 20%
+    margin-right: 40%
+    margin-top: -96px
+    background-color: #f6efe5
+    padding: 0 15px
+    padding-top: 15px
+    z-index: auto
+    &::after
+        content: ''
+        width: 100%
+        display: block
+
+    a
+        @include black-line
+
+    // benefits
+.benefits
+    position: absolute
+    width: 20%
+    margin-left: 60%
+    margin-top: 90px
+    padding: 0 15px
+
+    &::before
+        content: ''
+        background-image: url('../images/icon-circles.svg')
+        background-size: 100%
+        background-repeat: no-repeat
+        width: 100%
+        height: 200%
+        position: absolute
+        top: -390px
+        left: 0
+        background-position: top
+
+    &::after
+        content: ''
+        position: absolute
+        background-color: $blue
+        width: 100%
+        opacity: 0.9
+        z-index: -1
+        left: 0
+        top: -389px
+        height: 1165px
+
+    //requirements
+.requirements
+    position: absolute
+    margin-top: 700px
+    width: 60%
+    margin-left: 40%
+    column-count: 2
+    // Chrome, Safari, Opera
+    -webkit-column-count: 2
+    // Firefox
+    -moz-column-count: 2
+
+    column-gap: 50px
+    // Chrome, Safari, Opera
+    -webkit-column-gap: 50px
+    // Firefox
+    -moz-column-gap: 50px
+
+
+
+    h3
+        position: absolute
+        transform: rotate(270deg)
+        left: -235px
+        top: 25px
+        font-size: 45px
+        color: $dark-blue
+
+
+
+    p
+        padding-left: 25px
+        margin-top: 0
+
+
+    & :nth-child(4), & :nth-child(5), & :nth-child(6)
+        padding-left: 0
+        padding-right: 20px
+
+    a
+        @include black-line
+
+    //footer
+footer
+    position: absolute
+    bottom: 17px
+    left: 22px
+
+    a
+        text-decoration: none
+        display: block
+        padding-bottom: 5px
+        color: $dark-blue
+        font-weight: lighter
+        font-size: 14px
+
+        &:hover
+            color: grey
+
+// SIDEBAR
+.sidebar
+    background-color: $pink
+    color: white
+    position: relative
+    min-height: 1934px
+
+.wrapper
+    margin-left: 20%
+
+.design-selection
+    padding-top: 354px
+
+    h3
+        position: absolute
+        left: 35px
+        top: 443px
+
+    a
+        text-decoration: none
+        color: white
+
+
+    ul
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+        margin: 0
+        padding: 0
+
+
+    li
+        box-sizing: border-box
+        flex-basis: 25%
+        height: 325px
+        padding-top: 210px
+        padding-left: 17px
+        font-size: 18px
+        line-height: 30px
+        position: relative
+
+        &:nth-child(1)
+            background-color: $dark-blue
+            @include number('1')
+            &::after
+                content: ''
+                position: absolute
+                width: 100%
+                height: 371px
+                top: -354px
+                left: 0
+                background-color: $dark-blue
+
+        &:nth-child(2)
+            background-color: $orange
+            @include number('2')
+        &:nth-child(3)
+            background-color: $blue
+            @include number('3')
+        &:nth-child(4)
+            background-color: $orange
+            @include number('4')
+        &:nth-child(5)
+            background-color: $dark-blue
+            @include number('5')
+            &::after
+                content: ''
+                position: absolute
+                background-image: url('../images/mid-century-2.jpg')
+                background-position: left
+                background-size: cover
+                z-index: -3
+                background-repeat: no-repeat
+                height: 644px
+                width: 180%
+                top: -1323px
+                right: 0
+        &:nth-child(6)
+            background-color: $orange
+            @include number('6')
+        &:nth-child(7)
+            background-color: $blue
+            @include number('7')
+            &::after
+                content: ''
+                position: absolute
+                width: 100%
+                height: 930px
+                background: $blue
+                bottom: -930px
+                left: 0
+        &:nth-child(8)
+            background-color: $orange
+            @include number('8')
+
+.design-name, .designer-name
+    display: block
+    &:hover
+        color: black
+
+// design-archives, zen-resources
+
+.design-archives, .zen-resources
+    width: 25%
+    margin-left: 50%
+    position: relative
+    z-index: 1
+
+    a
+        @include black-line
+        line-height: 24px
+        font-size: 12px
+
+    h3
+        font-size: 18px
+
+    ul
+        padding-left: 15px
+.design-archives
+    margin-top: 170px
+    margin-bottom: 183px
+    h3
+        position: absolute
+        transform: rotate(270deg)
+        top: 20px
+        color: white
+        left: -77px
+
+
+.zen-resources
+    h3
+        position: absolute
+        transform: rotate(270deg)
+        top: 35px
+        color: white
+        left: -85px
+
+    &::after
+        content: ''
+        background: url('../images/icon-circles.svg') no-repeat
+        background-size: 100%
+        width: 100%
+        position: absolute
+        z-index: 1
+        height: 300%
+        background-position: bottom
+        bottom: -408px
