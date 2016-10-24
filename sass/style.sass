@@ -1,25 +1,4 @@
 
-body
-    margin: 0
-    font-family: sans-serif
-    background-color: #f6efe5
-
-.page-wrapper
-    min-width: 483px
-    max-width: 1920px
-    margin: 0 auto
-    height: 1px
-
-h3
-    font-size: 24px
-p
-    font-size: 15px
-    line-height: 30px
-
-li
-    list-style-type: none
-
-
 // variables
 $blue: #31c6dc
 $dark-blue: #0d2c40
@@ -27,9 +6,14 @@ $pink: #c879b2
 $orange: #f15a30
 
 //min
-$desktop-width: 1120px
-$tablet-width: 840px
-$mobile-width: 636px
+$desktop-min-width: 1120px
+$tablet-min-width: 840px
+$mobile-min-width: 636px
+
+
+//max
+$tablet-max-width: 1120px
+$mobile-max-width: 840px
 // mixin
 @mixin clearfix
     &::after
@@ -71,16 +55,30 @@ $mobile-width: 636px
         height: 1px
         background-color: black
 
-@mixin number($number)
-    &::before
-        content: $number
-        position: absolute
-        bottom: 104px
-        left: 18px
-        color: white
-        height: 59px
-        width: 45px
-        font-size: 80px
+// GLOBAL
+
+
+body
+    margin: 0
+    font-family: sans-serif
+    background-color: #f6efe5
+    color: $dark-blue
+
+.page-wrapper
+    max-width: 1920px
+    margin: 0 auto
+    height: 1px
+
+h3
+    font-size: 24px
+p
+    font-size: 15px
+    line-height: 30px
+
+
+li
+    list-style-type: none
+
 
 // INTRO
 .intro
@@ -93,6 +91,9 @@ $mobile-width: 636px
         position: relative
         float: left
         @include clearfix
+        @media screen and (max-width: $tablet-max-width)
+            width: 100%
+            background-color: #f15a30
         h1
 
             float: left
@@ -103,6 +104,7 @@ $mobile-width: 636px
             margin: 0
             font-size: 18px
             position: absolute
+
 
         h2
             width: 50%
@@ -117,6 +119,15 @@ $mobile-width: 636px
             padding-top: 250px
             font-size: 40px
             position: relative
+            @media screen and (max-width: $tablet-max-width)
+                width: 66%
+                min-height: 431px
+                padding-top: 45px
+
+            @media screen and (max-width: $mobile-max-width)
+                min-height: 320px
+                font-size: 30px
+
             &::after
                 content: ''
                 display: block
@@ -128,6 +139,10 @@ $mobile-width: 636px
                 background-position: bottom
                 left: 0
                 bottom: 0
+                @media screen and (max-width: $tablet-max-width)
+                    background-size: 50%
+                    background-position: left bottom
+
 
         //summary
 .summary
@@ -136,30 +151,31 @@ $mobile-width: 636px
     width: 60%
     float: left
     min-height: 800px
-    background-color: $pink
     padding-top: 250px
-
+    background: $pink url('../images/circle-white.svg') no-repeat
+    background-size: 100%
+    background-position: bottom
+    z-index: 1
+    @media screen and (max-width: $tablet-max-width)
+        width: 100%
+        padding-top: 30px
+        min-height: 50%
 
     p
         color: white
         width: 55%
-        padding-left: 25px
+        padding: 0 25px
+        @media screen and (max-width: $tablet-max-width)
+            margin-left: 35%
+        @media screen and (max-width: $mobile-max-width)
+            margin-left: 0
+            width: 94%
         &:last-child
             margin-bottom: 350px
+            @media screen and (max-width: $tablet-max-width)
+                margin-bottom: 38%
     a
         @include white-line
-
-    &::after
-        content: ''
-        display: block
-        background: url('../images/circle-white.svg') no-repeat
-        background-size: 100%
-        position: absolute
-        width: 100%
-        height: 50%
-        background-position: bottom
-        bottom: 0
-        z-index: 1
 
 
 
@@ -171,9 +187,18 @@ $mobile-width: 636px
     padding-top: 122px
     padding-bottom: 112px
     position: relative
+    @media screen and (max-width: $tablet-max-width)
+        box-sizing: border-box
+        padding: 35px 25px
 
+        width: 66.6%
+    @media screen and (max-width: $mobile-max-width)
+        width: 100%
+        padding: 0 25px
     p
         width: 66%
+        @media screen and (max-width: $tablet-max-width)
+            width: 95%
 
     p:last-child
         box-sizing: border-box
@@ -186,8 +211,21 @@ $mobile-width: 636px
 
         background-color: $blue
         opacity: 0.9
-        padding-top: 200px
-        padding-bottom: 300px
+        padding-top: 155px
+        padding-bottom: 325px
+        @media screen and (max-width: $tablet-max-width)
+            right: -50%
+            width: 50%
+            background-color: #f15b31
+            padding-top: 121px
+            padding-bottom: 190px
+        @media screen and (max-width: $mobile-max-width)
+            position: static
+            width: 100%
+            padding: 0
+            color: $dark-blue
+            background-color: inherit
+
 
 // MAIN
 .main
@@ -356,17 +394,32 @@ footer
     color: white
     position: relative
     min-height: 1934px
+    @media screen and (max-width: $mobile-max-width)
+        padding-top: 108px
+        min-height: 0
 
 .wrapper
     margin-left: 20%
-
+    @media screen and (max-width: $tablet-max-width)
+        margin-left: 0
 .design-selection
     padding-top: 354px
+    @media screen and (max-width: $mobile-max-width)
+        padding-top: 0
+
 
     h3
         position: absolute
-        left: 35px
+        left: 20px
         top: 443px
+        @media screen and (max-width: $tablet-max-width)
+            top: 279px
+            left: auto
+            right: 26px
+        @media screen and (max-width: $mobile-max-width)
+            left: 33px
+            top: 33px
+            right: auto
 
     a
         text-decoration: none
@@ -379,6 +432,9 @@ footer
         flex-wrap: wrap
         margin: 0
         padding: 0
+        @media screen and (max-width: $mobile-max-width)
+            flex-direction: column
+            flex-wrap: nowrap
 
 
     li
@@ -390,10 +446,28 @@ footer
         font-size: 18px
         line-height: 30px
         position: relative
+        @media screen and (max-width: $mobile-max-width)
+            font-size: 15px
+            padding-top: 118px
+            height: 176px
+
+        &:nth-child(-n+8)
+            &::before
+                position: absolute
+                bottom: 104px
+                left: 18px
+                color: white
+                height: 59px
+                width: 45px
+                font-size: 80px
+                @media screen and (max-width: $mobile-max-width)
+                    font-size: 40px
+                    bottom: 31px
 
         &:nth-child(1)
             background-color: $dark-blue
-            @include number('1')
+            &::before
+                content: '1'
             &::after
                 content: ''
                 position: absolute
@@ -402,19 +476,25 @@ footer
                 top: -354px
                 left: 0
                 background-color: $dark-blue
+                @media screen and (max-width: $mobile-max-width)
+                    display: none
 
         &:nth-child(2)
             background-color: $orange
-            @include number('2')
+            &::before
+                content: '2'
         &:nth-child(3)
             background-color: $blue
-            @include number('3')
+            &::before
+                content: '3'
         &:nth-child(4)
             background-color: $orange
-            @include number('4')
+            &::before
+                content: '4'
         &:nth-child(5)
             background-color: $dark-blue
-            @include number('5')
+            &::before
+                content: '5'
             &::after
                 content: ''
                 position: absolute
@@ -427,12 +507,16 @@ footer
                 width: 180%
                 top: -1323px
                 right: 0
+                @media screen and (max-width: $mobile-max-width)
+                    display: none
         &:nth-child(6)
             background-color: $orange
-            @include number('6')
+            &::before
+                content: '6'
         &:nth-child(7)
             background-color: $blue
-            @include number('7')
+            &::before
+                content: '7'
             &::after
                 content: ''
                 position: absolute
@@ -441,12 +525,17 @@ footer
                 background: $blue
                 bottom: -930px
                 left: 0
+                @media screen and (max-width: $mobile-max-width)
+                    display: none
         &:nth-child(8)
             background-color: $orange
-            @include number('8')
+            &::before
+                content: '8'
 
 .design-name, .designer-name
     display: block
+    @media screen and (max-width: $mobile-max-width)
+        display: inline
     &:hover
         color: black
 
@@ -458,42 +547,58 @@ footer
     position: relative
     z-index: 1
 
+    @media screen and (max-width: $mobile-max-width)
+        margin-left: 0
+        padding-left: 25px
+        padding-right: 75%
+
     a
         @include black-line
         line-height: 24px
-        font-size: 12px
+        font-size: 14px
 
     h3
-        font-size: 18px
+        font-size: 24px
 
     ul
         padding-left: 15px
+        @media screen and (max-width: $mobile-max-width)
+            padding-left: 0
+
 .design-archives
-    margin-top: 170px
-    margin-bottom: 183px
+    padding-top: 170px
+    padding-bottom: 183px
+    background: $blue
+    @media screen and (max-width: $mobile-max-width)
+        padding-top: 76px
+        padding-bottom: 70px
     h3
         position: absolute
         transform: rotate(270deg)
-        top: 20px
+        top: 211px
         color: white
-        left: -77px
-
+        left: -100px
+        @media screen and (max-width: $mobile-max-width)
+            position: static
+            transform: rotate(0deg)
 
 .zen-resources
+    background: $blue url('../images/icon-circles.svg') no-repeat
+    background-size: 100%
+    background-position: bottom
+    padding-bottom: 368px
+    @media screen and (max-width: $mobile-max-width)
+        padding-bottom: 200px
+        background-size: 30%
+
     h3
         position: absolute
         transform: rotate(270deg)
         top: 35px
         color: white
-        left: -85px
+        left: -111px
 
-    &::after
-        content: ''
-        background: url('../images/icon-circles.svg') no-repeat
-        background-size: 100%
-        width: 100%
-        position: absolute
-        z-index: 1
-        height: 300%
-        background-position: bottom
-        bottom: -408px
+        @media screen and (max-width: $mobile-max-width)
+            position: static
+            transform: rotate(0deg)
+            margin-top: 0

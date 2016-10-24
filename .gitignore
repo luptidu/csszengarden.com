@@ -1,2 +1,5 @@
-/.sass-cache/*
-/layout/*
+.sass-cache/*
+
+layout/*
+
+css/style.css.map
