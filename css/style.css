@@ -28,6 +28,7 @@ a {
     color: #94908a; }
 
 .intro {
+  width: 100%;
   content: "";
   display: table;
   clear: both; }
@@ -100,7 +101,7 @@ a {
   background: #c879b2 url("../images/circle-white.svg") no-repeat;
   background-size: 100%;
   background-position: bottom;
-  z-index: 1; }
+  z-index: 2; }
   @media screen and (max-width: 1120px) {
     .summary {
       width: 100%;
@@ -161,7 +162,8 @@ a {
     background-color: #31c6dc;
     opacity: 0.9;
     padding-top: 155px;
-    padding-bottom: 325px; }
+    padding-bottom: 325px;
+    z-index: 1; }
     @media screen and (max-width: 1120px) {
       .preamble p:last-child {
         right: -50%;
@@ -181,11 +183,10 @@ a {
   content: "";
   display: table;
   clear: both;
-  background: #0d2c40 url("../images/mid-century-1.jpg") no-repeat;
+  background: #0d2c40 url("../images/mid-century-3.jpg") no-repeat;
   background-size: cover;
   background-position: center;
-  position: relative;
-  z-index: -2; }
+  position: relative; }
   @media screen and (max-width: 840px) {
     .main {
       background: #0d2c40; } }
@@ -261,7 +262,7 @@ a {
   background-color: #f6efe5;
   padding: 0 15px;
   padding-top: 15px;
-  z-index: auto; }
+  z-index: 0; }
   @media screen and (max-width: 1120px) {
     .participation {
       margin-top: 25px;
@@ -361,10 +362,10 @@ a {
     position: absolute;
     transform: rotate(270deg);
     left: -235px;
-    top: 25px;
+    top: -15px;
     font-size: 45px;
     color: #0d2c40;
-    z-index: auto; }
+    z-index: 2; }
     @media screen and (max-width: 840px) {
       .requirements h3 {
         position: static;
@@ -384,8 +385,11 @@ a {
 
 footer {
   position: absolute;
-  top: 1092px;
+  top: 44%;
   left: 22px; }
+  @media screen and (max-width: 1120px) {
+    footer {
+      top: 41%; } }
   @media screen and (max-width: 840px) {
     footer {
       position: static;
@@ -512,7 +516,7 @@ footer {
         background-image: url("../images/mid-century-2.jpg");
         background-position: left;
         background-size: cover;
-        z-index: -1;
+        z-index: 1;
         background-repeat: no-repeat;
         height: 644px;
         width: 180%;
