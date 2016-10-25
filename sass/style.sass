@@ -103,7 +103,7 @@ a
             font-size: 40px
             position: relative
             @media screen and (max-width: $tablet-max-width)
-                width: 66%
+                width: 66.6%
                 min-height: 431px
                 padding-top: 45px
 
@@ -139,10 +139,12 @@ a
     background-size: 100%
     background-position: bottom
     z-index: 2
+
     @media screen and (max-width: $tablet-max-width)
         width: 100%
         padding-top: 30px
         min-height: 50%
+        padding: 0 15px
 
     p
         color: white
@@ -150,6 +152,7 @@ a
         padding: 0 15px
         @media screen and (max-width: $tablet-max-width)
             margin-left: 35%
+            padding: 0
         @media screen and (max-width: $mobile-max-width)
             margin-left: 0
             width: 94%
@@ -198,8 +201,8 @@ a
         padding-bottom: 325px
         z-index: 1
         @media screen and (max-width: $tablet-max-width)
-            right: -50%
-            width: 50%
+            right: -50.2%
+            width: 50.1%
             background-color: #f15b31
             padding-top: 121px
             padding-bottom: 190px
@@ -315,6 +318,9 @@ a
         z-index: -1
         @media screen and (max-width: $tablet-max-width)
             top: 0
+            width: 200%
+        @media screen and (max-width: $mobile-max-width)
+            display: none
     // benefits
 .benefits
     box-sizing: border-box
@@ -375,6 +381,7 @@ a
     -webkit-column-gap: 50px
     // Firefox
     -moz-column-gap: 50px
+    background: $bg-color
     @media screen and (max-width: $tablet-max-width)
         width: 75%
         margin-left: 25%
@@ -394,7 +401,6 @@ a
         margin: 0
         min-height: 0
         padding-bottom: 25px
-
 
 
 
@@ -437,6 +443,7 @@ footer
     @media screen and (max-width: $mobile-max-width)
         position: static
         padding: 25px
+        background: $bg-color
 
 
     a
@@ -610,6 +617,8 @@ footer
 
     @media screen and (max-width: $mobile-max-width)
         margin-left: 0
+        box-sizing: border-box
+        width: 100%
         padding-left: 25px
         padding-right: 75%
 

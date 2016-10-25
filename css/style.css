@@ -68,7 +68,7 @@ a {
       position: relative; }
       @media screen and (max-width: 1120px) {
         .intro header h2 {
-          width: 66%;
+          width: 66.6%;
           min-height: 431px;
           padding-top: 45px; } }
       @media screen and (max-width: 840px) {
@@ -106,14 +106,16 @@ a {
     .summary {
       width: 100%;
       padding-top: 30px;
-      min-height: 50%; } }
+      min-height: 50%;
+      padding: 0 15px; } }
   .summary p {
     color: white;
     width: 55%;
     padding: 0 15px; }
     @media screen and (max-width: 1120px) {
       .summary p {
-        margin-left: 35%; } }
+        margin-left: 35%;
+        padding: 0; } }
     @media screen and (max-width: 840px) {
       .summary p {
         margin-left: 0;
@@ -166,8 +168,8 @@ a {
     z-index: 1; }
     @media screen and (max-width: 1120px) {
       .preamble p:last-child {
-        right: -50%;
-        width: 50%;
+        right: -50.2%;
+        width: 50.1%;
         background-color: #f15b31;
         padding-top: 121px;
         padding-bottom: 190px; } }
@@ -285,7 +287,11 @@ a {
     z-index: -1; }
     @media screen and (max-width: 1120px) {
       .participation::before {
-        top: 0; } }
+        top: 0;
+        width: 200%; } }
+    @media screen and (max-width: 840px) {
+      .participation::before {
+        display: none; } }
 
 .benefits {
   box-sizing: border-box;
@@ -340,7 +346,8 @@ a {
   -moz-column-count: 2;
   column-gap: 50px;
   -webkit-column-gap: 50px;
-  -moz-column-gap: 50px; }
+  -moz-column-gap: 50px;
+  background: #f6efe5; }
   @media screen and (max-width: 1120px) {
     .requirements {
       width: 75%;
@@ -393,7 +400,8 @@ footer {
   @media screen and (max-width: 840px) {
     footer {
       position: static;
-      padding: 25px; } }
+      padding: 25px;
+      background: #f6efe5; } }
   footer a {
     border: none;
     display: block;
@@ -565,6 +573,8 @@ footer {
   @media screen and (max-width: 840px) {
     .design-archives, .zen-resources {
       margin-left: 0;
+      box-sizing: border-box;
+      width: 100%;
       padding-left: 25px;
       padding-right: 75%; } }
   .design-archives a, .zen-resources a {
