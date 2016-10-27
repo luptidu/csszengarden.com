@@ -27,8 +27,6 @@ $mobile-max-width: 840px
     &:hover
         color: #78496b
 
-
-
 // GLOBAL
 
 
@@ -74,8 +72,11 @@ a
         position: relative
         float: left
         @include clearfix
+
         @media screen and (max-width: $tablet-max-width)
+            transition: width 0.5s ease
             width: 100%
+            transition: background-color 0.5s ease
             background-color: #f15a30
         h1
 
@@ -102,14 +103,21 @@ a
             padding-top: 250px
             font-size: 40px
             position: relative
+            transition: min-height 0.5s ease
             @media screen and (max-width: $tablet-max-width)
+                transition: min-height 0.5s ease
                 width: 66.6%
                 min-height: 431px
                 padding-top: 45px
+                margin-left: 0
+                font-size: 4.6vw
 
             @media screen and (max-width: $mobile-max-width)
                 min-height: 320px
                 font-size: 30px
+                font-size: 4.3vw
+            @media screen and (max-width: 510px)
+                font-size: 24px
 
             &::after
                 content: ''
@@ -139,8 +147,9 @@ a
     background-size: 100%
     background-position: bottom
     z-index: 2
-
     @media screen and (max-width: $tablet-max-width)
+
+        transition: width 0.5s ease
         width: 100%
         padding-top: 30px
         min-height: 50%
@@ -150,10 +159,13 @@ a
         color: white
         width: 55%
         padding: 0 15px
+        transition: margin-left 0.5s ease
         @media screen and (max-width: $tablet-max-width)
+            transition: margin-left 0.5s ease
             margin-left: 35%
             padding: 0
         @media screen and (max-width: $mobile-max-width)
+            transition: margin-left 0.5s ease
             margin-left: 0
             width: 94%
         &:last-child
@@ -176,11 +188,12 @@ a
     @media screen and (max-width: $tablet-max-width)
         box-sizing: border-box
         padding: 35px 25px
-
+        transition: width 0.5s ease
         width: 66.6%
     @media screen and (max-width: $mobile-max-width)
         width: 100%
         padding: 0 15px
+        transition: width 0.5s ease
     p
         width: 66%
         @media screen and (max-width: $tablet-max-width)
@@ -200,10 +213,12 @@ a
         padding-top: 155px
         padding-bottom: 325px
         z-index: 1
+        transition: background-color 1s ease
         @media screen and (max-width: $tablet-max-width)
             right: -50.2%
             width: 50.1%
             background-color: #f15b31
+            transition: background-color 1s ease
             padding-top: 121px
             padding-bottom: 190px
         @media screen and (max-width: $mobile-max-width)
@@ -212,6 +227,7 @@ a
             padding: 0
             color: $dark-blue
             background-color: inherit
+            transition: width 1s ease
 
 
 // MAIN
@@ -230,9 +246,12 @@ a
     margin: 300px 0
     margin-right: 60%
     background-color: $dark-blue
+    transition: margin-right 1s ease
     @media screen and (max-width: $tablet-max-width)
+        transition: margin-right 1s ease
         margin-right: 33.3%
     @media screen and (max-width: $mobile-max-width)
+        transition: margin-right 1s ease
         margin: 0
         padding: 0 15px
 
@@ -296,6 +315,7 @@ a
     padding: 0 15px
     padding-top: 15px
     z-index: 0
+
     @media screen and (max-width: $tablet-max-width)
         margin-top: 25px
         margin-left: 0

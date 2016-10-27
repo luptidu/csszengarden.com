@@ -42,7 +42,9 @@ a {
     clear: both; }
     @media screen and (max-width: 1120px) {
       .intro header {
+        transition: width 0.5s ease;
         width: 100%;
+        transition: background-color 0.5s ease;
         background-color: #f15a30; } }
     .intro header h1 {
       float: left;
@@ -65,16 +67,24 @@ a {
       padding: 0 25px;
       padding-top: 250px;
       font-size: 40px;
-      position: relative; }
+      position: relative;
+      transition: min-height 0.5s ease; }
       @media screen and (max-width: 1120px) {
         .intro header h2 {
+          transition: min-height 0.5s ease;
           width: 66.6%;
           min-height: 431px;
-          padding-top: 45px; } }
+          padding-top: 45px;
+          margin-left: 0;
+          font-size: 4.6vw; } }
       @media screen and (max-width: 840px) {
         .intro header h2 {
           min-height: 320px;
-          font-size: 30px; } }
+          font-size: 30px;
+          font-size: 4.3vw; } }
+      @media screen and (max-width: 510px) {
+        .intro header h2 {
+          font-size: 24px; } }
       .intro header h2::after {
         content: "";
         display: block;
@@ -104,6 +114,7 @@ a {
   z-index: 2; }
   @media screen and (max-width: 1120px) {
     .summary {
+      transition: width 0.5s ease;
       width: 100%;
       padding-top: 30px;
       min-height: 50%;
@@ -111,13 +122,16 @@ a {
   .summary p {
     color: white;
     width: 55%;
-    padding: 0 15px; }
+    padding: 0 15px;
+    transition: margin-left 0.5s ease; }
     @media screen and (max-width: 1120px) {
       .summary p {
+        transition: margin-left 0.5s ease;
         margin-left: 35%;
         padding: 0; } }
     @media screen and (max-width: 840px) {
       .summary p {
+        transition: margin-left 0.5s ease;
         margin-left: 0;
         width: 94%; } }
     .summary p:last-child {
@@ -143,11 +157,13 @@ a {
     .preamble {
       box-sizing: border-box;
       padding: 35px 25px;
+      transition: width 0.5s ease;
       width: 66.6%; } }
   @media screen and (max-width: 840px) {
     .preamble {
       width: 100%;
-      padding: 0 15px; } }
+      padding: 0 15px;
+      transition: width 0.5s ease; } }
   .preamble p {
     width: 66%; }
     @media screen and (max-width: 1120px) {
@@ -165,12 +181,14 @@ a {
     opacity: 0.9;
     padding-top: 155px;
     padding-bottom: 325px;
-    z-index: 1; }
+    z-index: 1;
+    transition: background-color 1s ease; }
     @media screen and (max-width: 1120px) {
       .preamble p:last-child {
         right: -50.2%;
         width: 50.1%;
         background-color: #f15b31;
+        transition: background-color 1s ease;
         padding-top: 121px;
         padding-bottom: 190px; } }
     @media screen and (max-width: 840px) {
@@ -179,7 +197,8 @@ a {
         width: 100%;
         padding: 0;
         color: #0d2c40;
-        background-color: inherit; } }
+        background-color: inherit;
+        transition: width 1s ease; } }
 
 .main {
   content: "";
@@ -198,12 +217,15 @@ a {
   z-index: auto;
   margin: 300px 0;
   margin-right: 60%;
-  background-color: #0d2c40; }
+  background-color: #0d2c40;
+  transition: margin-right 1s ease; }
   @media screen and (max-width: 1120px) {
     .explanation {
+      transition: margin-right 1s ease;
       margin-right: 33.3%; } }
   @media screen and (max-width: 840px) {
     .explanation {
+      transition: margin-right 1s ease;
       margin: 0;
       padding: 0 15px; } }
   .explanation::before {
