@@ -233,7 +233,7 @@ a
 // MAIN
 .main
     @include clearfix
-    background: $dark-blue url('../images/mid-century-3.jpg') no-repeat
+    background: $dark-blue url('../images/mid-century-1.jpg') no-repeat
     background-size: cover
     background-position: center
     position: relative
@@ -242,9 +242,8 @@ a
     // explanation
 .explanation
     position: relative
-    z-index: auto
     margin: 300px 0
-    margin-right: 60%
+    margin-right: 50%
     background-color: $dark-blue
     transition: margin-right 1s ease
     @media screen and (max-width: $tablet-max-width)
@@ -314,8 +313,6 @@ a
     background-color: #f6efe5
     padding: 0 15px
     padding-top: 15px
-    z-index: 0
-
     @media screen and (max-width: $tablet-max-width)
         margin-top: 25px
         margin-left: 0
@@ -326,21 +323,6 @@ a
         padding: 0
         padding: 0 15px
 
-
-    &::before
-        content: ''
-        position: absolute
-        width: 250%
-        height: 500%
-        left: -50%
-        top: 115px
-        background-color: $bg-color
-        z-index: -1
-        @media screen and (max-width: $tablet-max-width)
-            top: 0
-            width: 200%
-        @media screen and (max-width: $mobile-max-width)
-            display: none
     // benefits
 .benefits
     box-sizing: border-box
@@ -373,9 +355,9 @@ a
         position: absolute
         background-color: $blue
         width: 100%
-        height: 400px
+        height: 500px
         left: 0
-        bottom: -400px
+        bottom: -500px
         @media screen and (max-width: $mobile-max-width)
             display: none
 
@@ -401,7 +383,7 @@ a
     -webkit-column-gap: 50px
     // Firefox
     -moz-column-gap: 50px
-    background: $bg-color
+    z-index: 2
     @media screen and (max-width: $tablet-max-width)
         width: 75%
         margin-left: 25%
@@ -432,7 +414,6 @@ a
         top: -15px
         font-size: 45px
         color: $dark-blue
-        z-index: 2
         @media screen and (max-width: $mobile-max-width)
             position: static
             transform: rotate(0deg)
@@ -456,7 +437,7 @@ a
     //footer
 footer
     position: absolute
-    top: 44%
+    top: 41%
     left: 22px
     @media screen and (max-width: $tablet-max-width)
         top: 41%
